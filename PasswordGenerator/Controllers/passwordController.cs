@@ -34,10 +34,37 @@ namespace PasswordGenerator.Controllers
             //    return stringBuilder.ToString();
             //}
         }
-        //public string GetPassword()
-        //{
+        public string GetPassword()
+        {
+            passwordModel model = new passwordModel();
 
-        //}
+            StringBuilder pass = new StringBuilder();
+
+            model.Password = pass.ToString();
+            model.Length = 10;
+
+            model.Numbers = "1234567890";
+            model.Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            model.Lower = "abcdefghijklmnopqrstuvwxyz";
+            model.Special = "!@#$%^&*()_+=-";
+            model.HasSpecial = false;
+            model.HasNumbers = true;
+            model.HasUpper = true;
+            model.HasLower = true;
+            model.Password = "";
+
+            if (model.HasSpecial == false)
+            {
+                model.Password = pass.ToString(model.)
+            }
+
+            if(model.Password != null)
+            {
+                model.Password 
+            }
+
+            return pass.ToString();
+        }
         public IActionResult Index()
         {
             passwordModel model = new passwordModel();
@@ -45,9 +72,9 @@ namespace PasswordGenerator.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string password, int numbers, string upper, string lower, bool hasPassword)
+        public IActionResult Index(string password, int length, string numbers, string upper, string lower, string special, bool hasSpecial, bool hasUpper, bool hasNumbers, bool hasLower)
         {
-            passwordModel model = new passwordModel(password, numbers, upper, lower, hasPassword);
+            passwordModel model = new passwordModel(password, length, numbers, upper, lower, special, hasSpecial, hasUpper, hasNumbers, hasLower);
 
             return View(model);
         }
