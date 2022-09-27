@@ -1,10 +1,16 @@
-﻿
+﻿<script>
+    function GetPassword() {
+        window.location.href = "/password/GetPassword/";
+    }
+</script>
 
 <body>
     <form>
         <div>
-            <span>Length</span>
+            <span>Length:</span>
             <span><input type="text" placeholder="Length"/></span>
+            <span>Your Generated Password:</span>
+            <span><input name="" type="text" readonly /></span>
         </div>
         <div>
             <span>ABC:</span>
@@ -20,14 +26,10 @@
         </div>
         <div>
             <span>!#$:</span>
-            <span><input type="checkbox" onchange=""/></span>
+            <span><input type="checkbox" checked="checked"/></span>
         </div>
         <div>
             <button type="button" onclick="GetPassword()">Generate Password</button>
         </div>
     </form>
-    
 </body>
-@*<span onchange="generate()"><input id="ctl00_MainContent_chkIncludeLowerChar" 
-    type="checkbox" name="ctl00$MainContent$chkIncludeLowerChar" 
-    checked="checked"><label for="ctl00_MainContent_chkIncludeLowerChar"> (e121212.g. abcdef)</label></span>*@
