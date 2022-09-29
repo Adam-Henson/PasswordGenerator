@@ -43,96 +43,96 @@ namespace PasswordGenerator.Controllers
 
             Random random = new Random();
 
-            model.Password = pass.ToString();
-            model.Length = 10;
+            string Password = pass.ToString();
+            int Length = 0;
 
             model.Numbers = "1234567890";
             model.Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             model.Lower = "abcdefghijklmnopqrstuvwxyz";
-            model.Special = "!@#$%^&*()_+=-";
-            model.HasSpecial = true;
-            model.HasNumbers = true;
-            model.HasUpper = true;
-            model.HasLower = true;
-            model.Password = model.Numbers + model.Upper + model.Lower + model.Special;
+            model.Special = "!@#$%&*_+=-";
+            bool HasSpecial = true;
+            bool HasNumbers = true;
+            bool HasUpper = true;
+            bool HasLower = true;
+            Password = model.Numbers + model.Upper + model.Lower + model.Special;
 
 
-            if (model.HasSpecial == true && model.HasNumbers == true && model.HasLower == true && model.HasUpper == true)
+            if (HasSpecial == true && HasNumbers == true && HasLower == true && HasUpper == true)
             {
-                model.Password = model.Upper + model.Lower + model.Numbers + model.Special;
+                Password = model.Upper + model.Lower + model.Numbers + model.Special;
             }
 
-            if (model.HasSpecial == true && model.HasNumbers == true && model.HasLower == true && model.HasUpper == false)
+            if (HasSpecial == true && HasNumbers == true && HasLower == true && HasUpper == false)
             {
-                model.Password = model.Lower + model.Numbers + model.Special;
+                Password = model.Lower + model.Numbers + model.Special;
             }
 
-            if (model.HasSpecial == true && model.HasNumbers == true && model.HasLower == false && model.HasUpper == false)
+            if (HasSpecial == true && HasNumbers == true && HasLower == false && HasUpper == false)
             {
-                model.Password = model.Numbers + model.Special;
+                Password = model.Numbers + model.Special;
             }
 
-            if (model.HasSpecial == true && model.HasNumbers == false && model.HasLower == false && model.HasUpper == false)
+            if (HasSpecial == true && HasNumbers == false && HasLower == false && HasUpper == false)
             {
-                model.Password = model.Special;
+                Password = model.Special;
             }
 
-            if (model.HasSpecial == true && model.HasNumbers == true && model.HasLower == false && model.HasUpper == true)
+            if (HasSpecial == true && HasNumbers == true && HasLower == false && HasUpper == true)
             {
-                model.Password = model.Upper + model.Numbers + model.Special;
+                Password = model.Upper + model.Numbers + model.Special;
             }
 
-            if (model.HasSpecial == true && model.HasNumbers == false && model.HasLower == false && model.HasUpper == true)
+            if (HasSpecial == true && HasNumbers == false && HasLower == false && HasUpper == true)
             {
-                model.Password = model.Upper + model.Special;
+                Password = model.Upper + model.Special;
             }
 
-            if (model.HasSpecial == false && model.HasNumbers == false && model.HasLower == false && model.HasUpper == true)
+            if (HasSpecial == false && HasNumbers == false && HasLower == false && HasUpper == true)
             {
-                model.Password = model.Upper;
+                Password = model.Upper;
             }
 
-            if (model.HasSpecial == true && model.HasNumbers == false && model.HasLower == true && model.HasUpper == true)
+            if (HasSpecial == true && HasNumbers == false && HasLower == true && HasUpper == true)
             {
-                model.Password = model.Upper + model.Lower + model.Special;
+                Password = model.Upper + model.Lower + model.Special;
             }
 
-            if (model.HasSpecial == false && model.HasNumbers == false && model.HasLower == true && model.HasUpper == true)
+            if (HasSpecial == false && HasNumbers == false && HasLower == true && HasUpper == true)
             {
-                model.Password = model.Upper + model.Lower;
+                Password = model.Upper + model.Lower;
             }
 
-            if (model.HasSpecial == false && model.HasNumbers == false && model.HasLower == true && model.HasUpper == false)
+            if (HasSpecial == false && HasNumbers == false && HasLower == true && HasUpper == false)
             {
-                model.Password = model.Lower;
+                Password = model.Lower;
             }
 
-            if (model.HasSpecial == false && model.HasNumbers == true && model.HasLower == true && model.HasUpper == true)
+            if (HasSpecial == false && HasNumbers == true && HasLower == true && HasUpper == true)
             {
-                model.Password = model.Upper + model.Lower + model.Numbers;
+                Password = model.Upper + model.Lower + model.Numbers;
             }
 
-            if (model.HasSpecial == false && model.HasNumbers == true && model.HasLower == true && model.HasUpper == false)
+            if (HasSpecial == false && HasNumbers == true && HasLower == true && HasUpper == false)
             {
-                model.Password = model.Lower + model.Numbers;
+                Password = model.Lower + model.Numbers;
             }
 
-            if (model.HasSpecial == false && model.HasNumbers == true && model.HasLower == false && model.HasUpper == false)
+            if (HasSpecial == false && HasNumbers == true && HasLower == false && HasUpper == false)
             {
-                model.Password = model.Numbers;
+                Password = model.Numbers;
             }
 
-            if (model.HasSpecial == false && model.HasNumbers == false && model.HasLower == false && model.HasUpper == false)
+            if (HasSpecial == false && HasNumbers == false && HasLower == false && HasUpper == false)
             {
                 Console.WriteLine("Must include at least one of these values. UpperCase, LowerCase, Special, Numbers");
-                model.Password = "  ";
+                Password = "  ";
             }
 
 
             for (int i = 0; i < 10; i++)
             {
-                int index = random.Next(model.Password.Length);
-                pass.Append(model.Password[index]);
+                int index = random.Next(Password.Length);
+                pass.Append(Password[index]);
             }
 
             

@@ -1,35 +1,42 @@
-﻿<script>
+﻿@*<script>
     function GetPassword() {
         window.location.href = "/password/GetPassword/";
     }
-</script>
-
+</script>*@
+@using PasswordGenerator.Models
 <body>
-    <form>
+    <form asp-controller="password" >
         <div>
             <span>Length:</span>
-            <span><input type="text" placeholder="Length"/></span>
-            <span>Your Generated Password:</span>
+            <span><input type="text" asp-for="@passwordModel.Length" placeholder="Length" /></span>
+            <span name="generatedPassword"><label asp-for="@passwordModel.Password">Your Generated Password:</label></span>
             <span><input name="" type="text" readonly /></span>
         </div>
         <div>
             <span>ABC:</span>
-            <span><input type="checkbox" checked="checked" /></span>
+            <span><input type="checkbox" asp-for="@passwordModel.HasUpper" name="Upper" checked="checked" /></span>
         </div>
         <div>
             <span>abc:</span>
-            <span><input type="checkbox" checked="checked" /></span>
+            <span><input type="checkbox" asp-for="@passwordModel.HasLower" name="Lower" checked="checked" /></span>
         </div>
         <div>
             <span>123:</span>
-            <span><input type="checkbox" checked="checked"/></span>
+            <span><input type="checkbox" asp-for="@passwordModel.HasNumbers" name="Numbers" checked="checked" /></span>
         </div>
         <div>
             <span>!#$:</span>
-            <span><input type="checkbox" checked="checked"/></span>
+            <span><input type="checkbox"  asp-for="@passwordModel.HasSpecial" name="Special" checked="checked" /></span>
+            <div>
+                <input type="submit" asp-controller="password" asp-action="GetPassword"/>
+            </div>
         </div>
         <div>
-            <button type="button" onclick="GetPassword()">Generate Password</button>
         </div>
     </form>
 </body>
+@*onclick="GetPassword()"
+asp-controller="passwordController" asp-action="GetPassword"
+<button type="button" name="generatedPassword" asp-controller="passwordController" asp-action="GetPassword">Generate Password</button>
+
+*@
