@@ -126,7 +126,7 @@ namespace PasswordGenerator.Controllers
 
             return View(model);
         }
-
+        
         //public IActionResult GetPassword(int Length, bool HasLower, bool HasUpper, bool HasSpecial, bool HasNumbers, string Password)
         //{
         //    passwordModel model = new passwordModel();
