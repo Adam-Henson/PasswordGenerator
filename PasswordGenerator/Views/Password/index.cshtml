@@ -1,8 +1,4 @@
-﻿@*<script>
-    function GetPassword() {
-        window.location.href = "/password/GetPassword/";
-    }
-</script>*@
+﻿
 @using PasswordGenerator.Models
 <body>
     <form asp-controller="password" >
@@ -39,8 +35,3 @@
         </div>
     </form>
 </body>
-@*onclick="GetPassword()"
-asp-controller="passwordController" asp-action="GetPassword"
-<button type="button" name="generatedPassword" asp-controller="passwordController" asp-action="GetPassword">Generate Password</button>
-
-*@
