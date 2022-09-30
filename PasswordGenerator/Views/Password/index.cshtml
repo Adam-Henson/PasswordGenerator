@@ -8,25 +8,29 @@
     <form asp-controller="password" >
         <div>
             <span>Length:</span>
-            <span><input type="text" name="Length" asp-for="@passwordModel.Length" placeholder="Length" /></span>
+            <span><input type="text" name="Length" value="@passwordModel.Length"/></span>
             <span><label asp-for="@passwordModel.Password">Your Generated Password:</label></span>
             <span><input name="" type="text" readonly /></span>
         </div>
         <div>
             <span>ABC:</span>
-            <span><input type="checkbox" asp-for="@passwordModel.HasUpper" name="HasUpper" checked="checked" /></span>
+            <span><input type="checkbox" asp-for="@passwordModel.HasUpper" /></span>
+            <span><input name="HasUpper" type="hidden" value="false" /></span>
         </div>
         <div>
             <span>abc:</span>
-            <span><input type="checkbox" asp-for="@passwordModel.HasLower" name="HasLower" checked="checked" /></span>
+            <span><input type="checkbox" asp-for="@passwordModel.HasLower"/></span>
+            <span><input name="HasLower" type="hidden" value="false" /></span>
         </div>
         <div>
             <span>123:</span>
-            <span><input type="checkbox" asp-for="@passwordModel.HasNumbers" name="HasNumbers" checked="checked" /></span>
+            <span><input type="checkbox" asp-for="@passwordModel.HasNumbers"/></span>
+            <span><input name="HasNumbers" type="hidden" value="false" /></span>
         </div>
         <div>
             <span>!#$:</span>
-            <span><input type="checkbox"  asp-for="@passwordModel.HasSpecial" name="HasSpecial" checked="checked" /></span>
+            <span><input type="checkbox"  asp-for="@passwordModel.HasSpecial"/></span>
+            <span><input name="HasSpecial" type="hidden" value="false" /></span>
             <div>
                 <input type="submit" name="password" asp-controller="password" asp-action="GetPassword"/>
             </div>
