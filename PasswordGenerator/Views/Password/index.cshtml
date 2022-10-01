@@ -5,8 +5,8 @@
         <div>
             <span>Length:</span>
             <span><input type="text" name="Length" value="12"/></span>
-            <span><label asp-for="@passwordModel.Password">Your Generated Password:</label></span>
-            <span><input name="" type="text" readonly /></span>
+            <span><label>Your Generated Password:</label></span>
+            <span><input name="password" type="text" readonly /></span>
         </div>
         <div>
             <span>ABC:</span>
@@ -29,6 +29,8 @@
             <span><input name="HasSpecial" type="hidden" value="false" /></span>
             <div>
                 <input type="submit" name="password" asp-controller="password" asp-action="GetPassword"/>
+                @*<span><label>Your Generated Password:</label></span>
+                <span><input name="password" asp-for="@passwordModel.Password" type="text" readonly /></span>*@
             </div>
         </div>
         <div>

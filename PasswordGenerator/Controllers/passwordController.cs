@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using PasswordGenerator.Models;
 using System.Text;
 
@@ -109,9 +108,9 @@ namespace PasswordGenerator.Controllers
                 int index = random.Next(Password.Length);
                 pass.Append(Password[index]);
             }
+            Password = pass.ToString();
 
-
-            return pass.ToString();
+            return Password;
         }
         public IActionResult Index()
         {
@@ -126,7 +125,7 @@ namespace PasswordGenerator.Controllers
 
             return View(model);
         }
-        
+
         //public IActionResult GetPassword(int Length, bool HasLower, bool HasUpper, bool HasSpecial, bool HasNumbers, string Password)
         //{
         //    passwordModel model = new passwordModel();
@@ -220,9 +219,9 @@ namespace PasswordGenerator.Controllers
         //        int index = random.Next(Password.Length);
         //        pass.Append(Password[index]);
         //    }
+        //    Password = pass.ToString();
 
-
-        //    return View(model);
+        //    return View("Index", Password);
         //}
     }
 }
