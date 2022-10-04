@@ -1,4 +1,4 @@
-﻿namespace PasswordGenerator.Models
+﻿ namespace PasswordGenerator.Models
 {
     public class passwordModel
     {

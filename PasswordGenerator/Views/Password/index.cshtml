@@ -1,12 +1,13 @@
-﻿
-@using PasswordGenerator.Models
+﻿@using PasswordGenerator.Models
+@using PasswordGenerator.Controllers
+
 <body>
     <form asp-controller="password" >
         <div>
             <span>Length:</span>
             <span><input type="text" name="Length" value="12"/></span>
-            <span><label>Your Generated Password:</label></span>
-            <span><input name="password" type="text" readonly /></span>
+            <span><label >Your Generated Password:</label></span>
+            <span><input name="password" value="@passwordModel.Password" type="text" readonly /></span>
         </div>
         <div>
             <span>ABC:</span>
