@@ -1,40 +1,39 @@
-﻿@using PasswordGenerator.Models
-@using PasswordGenerator.Controllers
+﻿@model passwordModel
 
 <body>
     <form asp-controller="password" >
         <div>
             <span>Length:</span>
             <span><input type="text" name="Length" value="12"/></span>
-            <span><label >Your Generated Password:</label></span>
-            <span><input name="password" value="@passwordModel.Password" type="text" readonly /></span>
         </div>
         <div>
             <span>ABC:</span>
-            <span><input type="checkbox" asp-for="@passwordModel.HasUpper" checked /></span>
+            <span><input type="checkbox" asp-for="@Model.HasUpper" checked/></span>
             <span><input name="HasUpper" type="hidden" value="false" /></span>
         </div>
         <div>
             <span>abc:</span>
-            <span><input type="checkbox" asp-for="@passwordModel.HasLower" checked/></span>
+            <span><input type="checkbox" asp-for="@Model.HasLower" checked/></span>
             <span><input name="HasLower" type="hidden" value="false" /></span>
         </div>
         <div>
             <span>123:</span>
-            <span><input type="checkbox" asp-for="@passwordModel.HasNumbers" checked/></span>
+            <span><input type="checkbox" asp-for="@Model.HasNumbers" checked/></span>
             <span><input name="HasNumbers" type="hidden" value="false" /></span>
         </div>
         <div>
             <span>!#$:</span>
-            <span><input type="checkbox"  asp-for="@passwordModel.HasSpecial" checked/></span>
+            <span><input type="checkbox"  asp-for="@Model.HasSpecial" checked/></span>
             <span><input name="HasSpecial" type="hidden" value="false" /></span>
             <div>
                 <input type="submit" name="password" asp-controller="password" asp-action="GetPassword"/>
-                @*<span><label>Your Generated Password:</label></span>
-                <span><input name="password" asp-for="@passwordModel.Password" type="text" readonly /></span>*@
             </div>
         </div>
         <div>
         </div>
     </form>
+    <div>
+        <span><label>Your Generated Password:</label></span>
+        <span><input name="password" value="@Model.Password" type="text" readonly /></span>
+    </div>
 </body>
