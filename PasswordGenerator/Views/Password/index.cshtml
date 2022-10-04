@@ -1,37 +1,63 @@
 ﻿
 @using PasswordGenerator.Models
-<body>
-    <form asp-controller="password" >
+@using PasswordGenerator.Controllers
+
+<body class="background-image">
+    <form class="contain" asp-controller="password" >
         <div>
-            <span>Length:</span>
-            <span><input type="text" name="Length" value="12"/></span>
-            <span><label asp-for="@passwordModel.Password">Your Generated Password:</label></span>
-            <span><input name="" type="text" readonly /></span>
+            <h2 class="Header">Password Generator</h2>
         </div>
         <div>
+            <span>Length:</span>
+            <span class="a"><input type="text" name="Length" value="12"/></span>
+            <span><label >Your Generated Password:</label></span>
+            <span><input name="password" value="@passwordModel.Password" type="text" readonly /></span>
+        </div>
+        <div class="space">
             <span>ABC:</span>
             <span><input type="checkbox" asp-for="@passwordModel.HasUpper" checked /></span>
             <span><input name="HasUpper" type="hidden" value="false" /></span>
         </div>
-        <div>
+        <div class="space">
             <span>abc:</span>
             <span><input type="checkbox" asp-for="@passwordModel.HasLower" checked/></span>
             <span><input name="HasLower" type="hidden" value="false" /></span>
         </div>
-        <div>
+        <div class="space">
             <span>123:</span>
             <span><input type="checkbox" asp-for="@passwordModel.HasNumbers" checked/></span>
             <span><input name="HasNumbers" type="hidden" value="false" /></span>
         </div>
-        <div>
+        <div class="space">
             <span>!#$:</span>
             <span><input type="checkbox"  asp-for="@passwordModel.HasSpecial" checked/></span>
             <span><input name="HasSpecial" type="hidden" value="false" /></span>
-            <div>
-                <input type="submit" name="password" asp-controller="password" asp-action="GetPassword"/>
+            <div class="space">
+                <input class="btn-primary" type="submit" value="Generate Password" name="password" asp-controller="password" asp-action="GetPassword"/>
             </div>
         </div>
         <div>
         </div>
     </form>
 </body>
+
+<style>
+    .Header{
+        margin-left: 20%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .contain{
+        margin-left: 10%;
+    }
+    .space{
+        margin-top: 20px;
+    }
+    .a{
+        margin-right: 80px;
+    }
+    .background-image{
+        background-color: lightgray;
+        font-size: 20px;
+    }
+</style>
