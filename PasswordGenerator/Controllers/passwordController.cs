@@ -7,7 +7,7 @@ namespace PasswordGenerator.Controllers
 {
     public class passwordController : Controller
     {
-        //public string GetPassword(int Length, bool HasLower, bool HasUpper, bool HasSpecial, bool HasNumbers, string Password)
+        //public static string GetPassword(int Length, bool HasLower, bool HasUpper, bool HasSpecial, bool HasNumbers, string Password)
         //{
         //    passwordModel model = new passwordModel();
 
@@ -20,7 +20,6 @@ namespace PasswordGenerator.Controllers
         //    model.Upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         //    model.Lower = "abcdefghijklmnopqrstuvwxyz";
         //    model.Special = "!@#$%&*_+=-";
-
 
 
         //    if (HasSpecial == true && HasNumbers == true && HasLower == true && HasUpper == true)
@@ -222,7 +221,12 @@ namespace PasswordGenerator.Controllers
             }
 
             Password = pass.ToString();
+            model.Password = Password;
 
+            return RedirectToAction("Index", model);
+        }
+        public IActionResult ShowPassword(string Password)
+        {
             return Content(Password);
         }
     }

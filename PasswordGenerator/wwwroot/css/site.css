@@ -16,3 +16,30 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.Header {
+    margin-left: 20%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contain {
+    margin-left: 10%;
+}
+
+.space {
+    margin-top: 20px;
+}
+
+.a {
+    margin-right: 80px;
+}
+
+.background-image {
+    background-color: lightgray;
+    font-size: 20px;
+}
+
+.pass {
+    margin-left: 20%;
+}
