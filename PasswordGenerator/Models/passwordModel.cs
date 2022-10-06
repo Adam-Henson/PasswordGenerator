@@ -1,9 +1,10 @@
-﻿using PasswordGenerator.Controllers;
+﻿
+using PasswordGenerator.Controllers;
 namespace PasswordGenerator.Models
 {
     public class passwordModel
     {
-        public string Password = "adfadsfklaewsjf";
+        public string Password { get; set; }
         public int Length { get; set; }
         public string Numbers { get; set; }
         public string Upper { get; set; }

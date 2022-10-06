@@ -9,11 +9,11 @@
         </div>
         <div>
             <span>Length:</span>
-            <span class="a"><input type="text" name="Length" value="12"/></span>
+            <span class="a"><input type="text" asp-for="@Model.Length" value="12"/></span>
         </div>
         <div class="space">
             <span>ABC:</span>
-            <span><input type="checkbox" asp-route-id="@Model.HasUpper" checked /></span>
+            <span><input type="checkbox" asp-for="@Model.HasUpper" checked /></span>
             <span><input name="HasUpper" type="hidden" value="false" /></span>
         </div>
         <div class="space">
@@ -44,5 +44,8 @@
             <span><label>Your Generated Password:</label></span>
             <span>@Model.Password</span>
         </h2>
+        <div>
+            @Model.HasLower
+        </div>
     </div>
 </body>
