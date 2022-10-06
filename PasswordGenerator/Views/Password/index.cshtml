@@ -1,11 +1,10 @@
-﻿@model passwordModel;
-@using PasswordGenerator.Models
-@using PasswordGenerator.Controllers
+﻿@model passwordModel
 
-<body class="background-image">
-    <form class="contain" asp-controller="password" >
+<body>
+    <form asp-controller="password" >
         <div>
-            <h2 class="Header">Password Generator</h2>
+            <span>Length:</span>
+            <span><input type="text" name="Length" value="12"/></span>
         </div>
         <div>
             <span>Length:</span>
@@ -13,7 +12,7 @@
         </div>
         <div class="space">
             <span>ABC:</span>
-            <span><input type="checkbox" asp-for="@Model.HasUpper" checked /></span>
+            <span><input type="checkbox" asp-for="@Model.HasUpper" checked/></span>
             <span><input name="HasUpper" type="hidden" value="false" /></span>
         </div>
         <div class="space">
@@ -38,11 +37,7 @@
         </div>
     </form>
     <div>
-        <br />
-        <br />
-        <h2 class="pass">
-            <span><label>Your Generated Password:</label></span>
-            <span><input type="text" value="@Model.Password" readonly /></span>
-        </h2>
+        <span><label>Your Generated Password:</label></span>
+        <span><input name="password" value="@Model.Password" type="text" readonly /></span>
     </div>
 </body>

@@ -1,15 +1,13 @@
-﻿
-using PasswordGenerator.Controllers;
-namespace PasswordGenerator.Models
+﻿ namespace PasswordGenerator.Models
 {
     public class passwordModel
     {
-        public string Password { get; set; }
+        public string? Password { get; set; }
         public int Length { get; set; }
-        public string Numbers { get; set; }
-        public string Upper { get; set; }
-        public string Lower { get; set; }
-        public string Special { get; set; }
+        public string? Numbers { get; set; }
+        public string? Upper { get; set; }
+        public string? Lower { get; set; }
+        public string? Special { get; set; }
         public bool HasSpecial { get; set; }
         public bool HasUpper { get; set; }
         public bool HasNumbers { get; set; }
