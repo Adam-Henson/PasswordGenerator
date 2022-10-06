@@ -2,7 +2,7 @@
 {
     public class passwordModel
     {
-        public string? Password { get; set; }
+        public string Password { get; set; }
         public int Length { get; set; }
         public string? Numbers { get; set; }
         public string? Upper { get; set; }

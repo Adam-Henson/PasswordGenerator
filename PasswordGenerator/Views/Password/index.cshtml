@@ -9,7 +9,6 @@
         <div class="space">
             <span>ABC:</span>
             <span><input type="checkbox" asp-for="@Model.HasUpper" checked /></span>
-            <span><input type="checkbox" asp-for="@Model.HasUpper" checked/></span>
             <span><input name="HasUpper" type="hidden" value="false" /></span>
         </div>
         <div class="space">
@@ -27,6 +26,7 @@
             <span><input type="checkbox"  asp-for="@Model.HasSpecial" checked/></span>
             <span><input name="HasSpecial" type="hidden" value="false" /></span>
         </div>
+        <div>
             <div class="space">
                 <input class="btn-primary" type="submit" value="Generate Password" name="password" asp-controller="password" asp-action="GetPassword"/>
             </div>
@@ -41,7 +41,5 @@
             <span><label>Your Generated Password:</label></span>
             <span><input type="text" value="@Model.Password" readonly /></span>
         </h2>
-        <span><label>Your Generated Password:</label></span>
-        <span><input name="password" value="@Model.Password" type="text" readonly /></span>
     </div>
 </body>
