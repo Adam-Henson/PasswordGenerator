@@ -117,7 +117,7 @@ namespace PasswordGenerator.Controllers
             Password = pass.ToString();
             model.Password = Password;
 
-            return View(model);
+            return View("Index", model);
         }
     }
 }
