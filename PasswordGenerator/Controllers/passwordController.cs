@@ -220,7 +220,7 @@ namespace PasswordGenerator.Controllers
             }
             Password = pass.ToString();
 
-            return Content(Password);
+            return View("Index");
         }
     }
 }
