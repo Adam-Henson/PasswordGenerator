@@ -42,79 +42,170 @@ namespace PasswordGenerator.Controllers
             if (HasSpecial == true && HasNumbers == true && HasLower == true && HasUpper == true)
             {
                 Password = model.Upper + model.Lower + model.Numbers + model.Special;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == true && HasNumbers == true && HasLower == true && HasUpper == false)
             {
                 Password = model.Lower + model.Numbers + model.Special;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == true && HasNumbers == true && HasLower == false && HasUpper == false)
             {
                 Password = model.Numbers + model.Special;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == true && HasNumbers == false && HasLower == false && HasUpper == false)
             {
                 Password = model.Special;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == true && HasNumbers == true && HasLower == false && HasUpper == true)
             {
                 Password = model.Upper + model.Numbers + model.Special;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == true && HasNumbers == false && HasLower == false && HasUpper == true)
             {
                 Password = model.Upper + model.Special;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == false && HasNumbers == false && HasLower == false && HasUpper == true)
             {
                 Password = model.Upper;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == true && HasNumbers == false && HasLower == true && HasUpper == true)
             {
                 Password = model.Upper + model.Lower + model.Special;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == false && HasNumbers == false && HasLower == true && HasUpper == true)
             {
                 Password = model.Upper + model.Lower;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == false && HasNumbers == false && HasLower == true && HasUpper == false)
             {
                 Password = model.Lower;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == false && HasNumbers == true && HasLower == true && HasUpper == true)
             {
                 Password = model.Upper + model.Lower + model.Numbers;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == false && HasNumbers == true && HasLower == true && HasUpper == false)
             {
                 Password = model.Lower + model.Numbers;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
             if (HasSpecial == false && HasNumbers == true && HasLower == false && HasUpper == false)
             {
                 Password = model.Numbers;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
             }
 
-            if (HasSpecial == false && HasNumbers == false && HasLower == false && HasUpper == false)
+            if(HasSpecial == false && HasNumbers == false && HasLower == false && HasUpper == false)
             {
-                Password = "Must include at least one of these values. UpperCase, LowerCase, Special, Numbers";
+                model.Password = "Must include at least one.";
             }
 
-            for (int i = 0; i < Length; i++)
-            {
-                int index = random.Next(Password.Length);
-                pass.Append(Password[index]);
-            }
-            model.Password = pass.ToString();
+            //for (int i = 0; i < Length; i++)
+            //{
+            //    int index = random.Next(Password.Length);
+            //    pass.Append(Password[index]);
+            //}
+            //model.Password = pass.ToString();
 
             return View("Index", model);
         }
