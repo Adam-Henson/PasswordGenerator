@@ -199,14 +199,6 @@ namespace PasswordGenerator.Controllers
             {
                 model.Password = "Must include at least one.";
             }
-
-            //for (int i = 0; i < Length; i++)
-            //{
-            //    int index = random.Next(Password.Length);
-            //    pass.Append(Password[index]);
-            //}
-            //model.Password = pass.ToString();
-
             return View("Index", model);
         }
     }
