@@ -43,3 +43,8 @@ body {
 .pass {
     margin-left: 10%;
 }
+
+.button-outline {
+    border: solid;
+    border-color: black;
+}

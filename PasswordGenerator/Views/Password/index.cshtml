@@ -1,7 +1,10 @@
 @model passwordModel
 
-<body>
-    <form asp-controller="password" >
+<body class="background-image">
+    <form class="contain" asp-controller="password">
+        <div class="Header">
+            <h1>Password Generator</h1>
+        </div>
         <div>
             <span>Length:</span>
             <span><input type="text" name="Length" value="12"/></span>
@@ -9,22 +12,18 @@
         <div class="space">
             <span>ABC:</span>
             <span><input type="checkbox" asp-for="@Model.HasUpper" checked /></span>
-            <span><input name="HasUpper" type="hidden" value="false" /></span>
         </div>
         <div class="space">
             <span>abc:</span>
             <span><input type="checkbox" asp-for="@Model.HasLower" checked/></span>
-            <span><input name="HasLower" type="hidden" value="false" /></span>
         </div>
         <div class="space">
             <span>123:</span>
             <span><input type="checkbox" asp-for="@Model.HasNumbers" checked/></span>
-            <span><input name="HasNumbers" type="hidden" value="false" /></span>
         </div>
         <div class="space">
             <span>!#$:</span>
             <span><input type="checkbox"  asp-for="@Model.HasSpecial" checked/></span>
-            <span><input name="HasSpecial" type="hidden" value="false" /></span>
         </div>
         <div>
             <div class="space">
