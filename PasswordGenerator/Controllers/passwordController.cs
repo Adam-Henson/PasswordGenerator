@@ -195,7 +195,19 @@ namespace PasswordGenerator.Controllers
                 model.Password = pass.ToString();
             }
 
-            if(HasSpecial == false && HasNumbers == false && HasLower == false && HasUpper == false)
+            if (HasSpecial == true && HasNumbers == false && HasLower == true && HasUpper == false)
+            {
+                Password = model.Special + model.Lower;
+
+                for (int i = 0; i < Length; i++)
+                {
+                    int index = random.Next(Password.Length);
+                    pass.Append(Password[index]);
+                }
+                model.Password = pass.ToString();
+            }
+
+            if (HasSpecial == false && HasNumbers == false && HasLower == false && HasUpper == false)
             {
                 model.Password = "Must include at least one.";
             }
